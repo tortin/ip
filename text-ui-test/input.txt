@@ -20,6 +20,9 @@ mark 6
 list
 mark 6
 list
+delete 3
+list
 mark 8
 unmark hello
+delete 7
 bye

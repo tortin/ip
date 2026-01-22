@@ -45,24 +45,44 @@ public class Pablo {
             } else if (action.equals("deadline")) {
                 String[] parts = input.split(" /by ", 2);
                 String task = parts[0].substring("deadline ".length());
-                String deadline = parts[1];
-                tasks[task_idx] = new Deadline(task, false, deadline);
-                addTask(tasks[task_idx], task_idx + 1);
-                task_idx++;
+                try {
+                    String deadline = parts[1];
+                    tasks[task_idx] = new Deadline(task, false, deadline);
+                    addTask(tasks[task_idx], task_idx + 1);
+                    task_idx++;
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("You must specify a complete by timing for a deadline task using the \"by\" tag!");
+                }
             } else if (action.equals("event")) {
                 String[] parts = input.split(" /from | /to ", 3);
-                String name = parts[0];
-                String from = parts[1];
-                String to = parts[2];
-                tasks[task_idx] = new Event(name, false, from, to);
-                addTask(tasks[task_idx], task_idx + 1);
-                task_idx++;
+                try {
+                    String name = parts[0];
+                    String from = parts[1];
+                    String to = parts[2];
+                    tasks[task_idx] = new Event(name, false, from, to);
+                    addTask(tasks[task_idx], task_idx + 1);
+                    task_idx++;
+                } catch (IndexOutOfBoundsException e) {
+                    System.out.println("You must specify a to and from timing for a Event task using the \"/from\" and \"/to\" tags!");
+                }
             } else if (action.equals("mark")) {
-                tasks[Integer.parseInt(input.split(" ")[1]) - 1].markTask();
-                print_resp(String.format("Nice! I've marked this task as done:\n    %s", tasks[Integer.parseInt(input.split(" ")[1]) - 1].describe()));
+                try {
+                    tasks[Integer.parseInt(input.split(" ")[1]) - 1].markTask();
+                    print_resp(String.format("Nice! I've marked this task as done:\n    %s", tasks[Integer.parseInt(input.split(" ")[1]) - 1].describe()));
+                } catch (NullPointerException e) {
+                    System.out.println("The task specified doesn't exist!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Enter an integer corresponding to a task to mark as complete!");
+                }
             } else if (action.equals("unmark")) {
-                tasks[Integer.parseInt(input.split(" ")[1]) - 1].unmarkTask();
-                print_resp(String.format("OK, I've marked this task as not done yet:\n    %s", tasks[Integer.parseInt(input.split(" ")[1]) - 1].describe()));
+                try {
+                    tasks[Integer.parseInt(input.split(" ")[1]) - 1].unmarkTask();
+                    print_resp(String.format("OK, I've marked this task as not done yet:\n    %s", tasks[Integer.parseInt(input.split(" ")[1]) - 1].describe()));
+                } catch (NullPointerException e) {
+                    System.out.println("The task specified doesn't exist!");
+                } catch (NumberFormatException e) {
+                    System.out.println("Enter an integer corresponding to a task to mark as incomplete!");
+                }
             }
             input = scanner.nextLine();
             action = input.split(" ")[0];

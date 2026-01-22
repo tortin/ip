@@ -7,11 +7,13 @@
     [T][ ] read book
     Now you have 1 tasks in the list.
     ____________________________________________________________
+You must specify a complete by timing for a deadline task using the "by" tag!
     ____________________________________________________________
     Got it. I've added this task:
     [D][ ] return book (by: June 6th)
     Now you have 2 tasks in the list.
     ____________________________________________________________
+You must specify a to and from timing for a Event task using the "/from" and "/to" tags!
     ____________________________________________________________
     Got it. I've added this task:
     [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
@@ -123,6 +125,8 @@
     6. [D][X] return book (by: Sunday)
     7. [E][ ] event project meeting (from: Mon 2pm to: 4pm)
     ____________________________________________________________
+The task specified doesn't exist!
+Enter an integer corresponding to a task to mark as incomplete!
     ____________________________________________________________
     Bye. Hope to see you again soon!
     ____________________________________________________________

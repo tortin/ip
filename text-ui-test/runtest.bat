@@ -18,4 +18,4 @@ REM run the program, feed commands from input.txt file and redirect the output t
 java -classpath .\bin Pablo < .\text-ui-test\input.txt > .\text-ui-test\ACTUAL.TXT
 
 REM compare the output to the expected output
-FC ACTUAL.TXT EXPECTED.TXT
+FC .\text-ui-test\ACTUAL.TXT .\text-ui-test\EXPECTED.TXT

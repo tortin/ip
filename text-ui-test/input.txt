@@ -1,5 +1,7 @@
 todo read book
+deadline return book
 deadline return book /by June 6th
+event project meeting /from 2pm
 event project meeting /from Aug 6th 2pm /to 4pm
 list
 mark 1
@@ -18,4 +20,6 @@ mark 6
 list
 mark 6
 list
+mark 8
+unmark hello
 bye

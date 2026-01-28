@@ -12,9 +12,9 @@ public class DataLoader {
         this.fileName = fileName;
     }
 
-    public ArrayList<Task> readFile() throws FileNotFoundException {
+    public TaskList readFile() throws FileNotFoundException {
         File file = new File(this.fileName);
-        ArrayList<Task> tasks = new ArrayList<Task>();
+        TaskList tasks = new TaskList();
         Scanner s = new Scanner(file);
         while (s.hasNext()) {
             // Split string by | and leading + trailing spaces
@@ -24,13 +24,13 @@ public class DataLoader {
 
             switch (task_type) {
                 case 'T':
-                    tasks.add(new ToDo(task_arr[2], isDone));
+                    tasks.addTask(new ToDo(task_arr[2], isDone), false);
                     break;
                 case 'D':
-                    tasks.add(new Deadline(task_arr[2], isDone, task_arr[3]));
+                    tasks.addTask(new Deadline(task_arr[2], isDone, task_arr[3]), false);
                     break;
                 case 'E':
-                    tasks.add(new Event(task_arr[2], isDone, task_arr[3], task_arr[4]));
+                    tasks.addTask(new Event(task_arr[2], isDone, task_arr[3], task_arr[4]), false);
                     break;
             }
         }
@@ -38,12 +38,9 @@ public class DataLoader {
         return tasks;
     }
 
-    public void writeFile(ArrayList<Task> taskList) throws IOException {
+    public void writeFile(TaskList tasks) throws IOException {
         FileWriter fw = new FileWriter(this.fileName);
-        for (Task task : taskList) {
-            fw.write(task.toString());
-            fw.write(System.lineSeparator());
-        }
+        fw.write(tasks.writeFormat());
         fw.close();
     }
 }

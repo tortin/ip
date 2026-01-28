@@ -66,7 +66,7 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     5. [T][ ] borrow book
     ____________________________________________________________
     ____________________________________________________________
-    OK, I've marked this task as not done yet:
+    Nice! I've marked this task as undone:
     [T][ ] read book
     ____________________________________________________________
     ____________________________________________________________
@@ -127,7 +127,7 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     ____________________________________________________________
     ____________________________________________________________
     Noted. I've removed this task:
-    [T][X] join sports club
+    [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
     Now you have 6 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________

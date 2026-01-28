@@ -1,6 +1,9 @@
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 import java.lang.StringBuilder;
 import java.util.ArrayList;
+import java.io.File;
 
 public class Pablo {
     public static String list_tasks(ArrayList<Task> tasks) {
@@ -26,8 +29,10 @@ public class Pablo {
         print_resp(String.format("Got it. I've added this task:\n    %s\n    Now you have %d tasks in the list.", task.describe(), numTasks));
     }
 
-    public static void main(String[] args) {
-        ArrayList<Task> tasks = new ArrayList<Task>();
+    public static void main(String[] args) throws FileNotFoundException, IOException {
+        // Get current list of tasks from ./data/pablo.txt
+        DataLoader dl = new DataLoader("./data/pablo.txt");
+        ArrayList<Task> tasks = dl.readFile();
 
         print_resp("Hello! I'm Pablo!\n    What can I do for you?");
 
@@ -93,6 +98,13 @@ public class Pablo {
             input = scanner.nextLine();
             action = input.split(" ")[0];
         }
+
+        try {
+            dl.writeFile(tasks);
+        } catch (IOException e) {
+            System.out.println("Something went wrong writing to pablo.txt");
+        }
+
         print_resp("Bye. Hope to see you again soon!");
     }
 }

@@ -1,18 +1,18 @@
 public abstract class Task {
     private String name;
-    private boolean done;
+    private boolean isDone;
 
-    public Task(String name, boolean done) {
+    public Task(String name, boolean isDone) {
         this.name = name;
-        this.done = done;
+        this.isDone = isDone;
     }
 
     public void markTask() {
-        this.done = true;
+        this.isDone = true;
     }
 
     public void unmarkTask() {
-        this.done = false;
+        this.isDone = false;
     }
 
     public String getName() {
@@ -20,7 +20,7 @@ public abstract class Task {
     }
 
     public boolean getDone() {
-        return this.done;
+        return this.isDone;
     }
 
     public abstract String getType();

@@ -23,4 +23,9 @@ public class Event extends Task{
     public String describe() {
         return String.format("[E][%s] %s (from: %s to: %s)", this.getDone() ? "X" : " ", this.getName(), this.from, this.to);
     }
+
+    @Override
+    public String toString() {
+        return String.format("E | %s | %s | %s | %s", this.getDone() ? "1" : "0", this.getName(), this.from, this.to);
+    }
 }

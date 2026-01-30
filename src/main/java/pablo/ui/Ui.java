@@ -1,4 +1,7 @@
+package pablo.ui;
+
 import java.util.Scanner;
+import pablo.task.TaskList;
 
 public class Ui {
     private Scanner scanner;
@@ -63,7 +66,7 @@ public class Ui {
     }
 
     public void showEventError() {
-        System.out.println("You must specify a to and from timing for a Event task using the \"/from\" and \"/to\" tags!");
+        System.out.println("You must specify a to and from timing for a pablo.task.Event task using the \"/from\" and \"/to\" tags!");
     }
 
     public void showIndexError() {

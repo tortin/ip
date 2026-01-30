@@ -1,5 +1,12 @@
+package pablo;
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import pablo.command.Command;
+import pablo.fileio.DataLoader;
+import pablo.parser.Parser;
+import pablo.task.TaskList;
+import pablo.ui.Ui;
 
 public class Pablo {
 

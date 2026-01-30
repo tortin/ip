@@ -13,7 +13,7 @@ You must specify a complete by timing for a deadline task using the "by" tag!
     [D][ ] return book (by: 06-06-2026_12:00)
     Now you have 2 tasks in the list.
     ____________________________________________________________
-You must specify a to and from timing for a Event task using the "/from" and "/to" tags!
+You must specify a to and from timing for a pablo.task.Event task using the "/from" and "/to" tags!
     ____________________________________________________________
     Got it. I've added this task:
     [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)

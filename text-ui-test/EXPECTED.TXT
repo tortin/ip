@@ -10,20 +10,20 @@
 You must specify a complete by timing for a deadline task using the "by" tag!
     ____________________________________________________________
     Got it. I've added this task:
-    [D][ ] return book (by: June 6th)
+    [D][ ] return book (by: 06-06-2026_12:00)
     Now you have 2 tasks in the list.
     ____________________________________________________________
 You must specify a to and from timing for a Event task using the "/from" and "/to" tags!
     ____________________________________________________________
     Got it. I've added this task:
-    [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     Now you have 3 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
@@ -32,8 +32,8 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][X] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
@@ -48,8 +48,8 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][X] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][ ] join sports club
     5. [T][ ] borrow book
     ____________________________________________________________
@@ -60,8 +60,8 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][X] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][X] join sports club
     5. [T][ ] borrow book
     ____________________________________________________________
@@ -72,72 +72,72 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][X] join sports club
     5. [T][ ] borrow book
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [D][ ] return book (by: Sunday)
+    [D][ ] return book (by: 31-05-2026_00:00)
     Now you have 6 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Got it. I've added this task:
-    [E][ ] event project meeting (from: Mon 2pm to: 4pm)
+    [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     Now you have 7 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][X] join sports club
     5. [T][ ] borrow book
-    6. [D][ ] return book (by: Sunday)
-    7. [E][ ] event project meeting (from: Mon 2pm to: 4pm)
+    6. [D][ ] return book (by: 31-05-2026_00:00)
+    7. [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
-    [D][X] return book (by: Sunday)
+    [D][X] return book (by: 31-05-2026_00:00)
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][X] join sports club
     5. [T][ ] borrow book
-    6. [D][X] return book (by: Sunday)
-    7. [E][ ] event project meeting (from: Mon 2pm to: 4pm)
+    6. [D][X] return book (by: 31-05-2026_00:00)
+    7. [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     ____________________________________________________________
     ____________________________________________________________
     Nice! I've marked this task as done:
-    [D][X] return book (by: Sunday)
+    [D][X] return book (by: 31-05-2026_00:00)
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
-    3. [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
+    3. [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     4. [T][X] join sports club
     5. [T][ ] borrow book
-    6. [D][X] return book (by: Sunday)
-    7. [E][ ] event project meeting (from: Mon 2pm to: 4pm)
+    6. [D][X] return book (by: 31-05-2026_00:00)
+    7. [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     ____________________________________________________________
     ____________________________________________________________
     Noted. I've removed this task:
-    [E][ ] event project meeting (from: Aug 6th 2pm to: 4pm)
+    [E][ ] event project meeting (from: 06-06-2026_12:00 to: 06-06-2026_16:00)
     Now you have 6 tasks in the list.
     ____________________________________________________________
     ____________________________________________________________
     Here are the tasks in your list:
     1. [T][ ] read book
-    2. [D][ ] return book (by: June 6th)
+    2. [D][ ] return book (by: 06-06-2026_12:00)
     3. [T][X] join sports club
     4. [T][ ] borrow book
-    5. [D][X] return book (by: Sunday)
-    6. [E][ ] event project meeting (from: Mon 2pm to: 4pm)
+    5. [D][X] return book (by: 31-05-2026_00:00)
+    6. [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     ____________________________________________________________
 The task specified doesn't exist!
 Enter an integer corresponding to a task to mark as incomplete!

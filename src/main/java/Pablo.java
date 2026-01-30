@@ -1,8 +1,7 @@
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-import java.lang.StringBuilder;
-import java.util.ArrayList;
+import java.time.LocalDateTime;
 
 public class Pablo {
 
@@ -33,7 +32,7 @@ public class Pablo {
                 String[] parts = input.split(" /by ", 2);
                 String task = parts[0].substring("deadline ".length());
                 try {
-                    String deadline = parts[1];
+                    LocalDateTime deadline = LocalDateTime.parse(parts[1], Task.DATE_FORMATTER);
                     tasks.addTask(new Deadline(task, false, deadline), true);
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must specify a complete by timing for a deadline task using the \"by\" tag!");
@@ -42,8 +41,8 @@ public class Pablo {
                 String[] parts = input.split(" /from | /to ", 3);
                 try {
                     String name = parts[0];
-                    String from = parts[1];
-                    String to = parts[2];
+                    LocalDateTime from = LocalDateTime.parse(parts[1], Task.DATE_FORMATTER);
+                    LocalDateTime to = LocalDateTime.parse(parts[2], Task.DATE_FORMATTER);
                     tasks.addTask(new Event(name, false, from, to), true);
                 } catch (IndexOutOfBoundsException e) {
                     System.out.println("You must specify a to and from timing for a Event task using the \"/from\" and \"/to\" tags!");

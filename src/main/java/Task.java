@@ -1,4 +1,7 @@
+import java.time.format.DateTimeFormatter;
+
 public abstract class Task {
+    public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm");
     private String name;
     private boolean isDone;
 

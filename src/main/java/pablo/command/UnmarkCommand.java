@@ -1,3 +1,8 @@
+package pablo.command;
+
+import pablo.task.TaskList;
+import pablo.ui.Ui;
+
 public class UnmarkCommand extends Command {
     private int unmarkIdx;
 

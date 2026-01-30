@@ -1,4 +1,10 @@
-public class AddCommand extends Command{
+package pablo.command;
+
+import pablo.task.Task;
+import pablo.task.TaskList;
+import pablo.ui.Ui;
+
+public class AddCommand extends Command {
 
     private Task task;
 
@@ -10,5 +16,4 @@ public class AddCommand extends Command{
         tasks.addTask(task);
         ui.showResponse(String.format("Got it. I've added this task:\n    %s\n    Now you have %d tasks in the list.", task.describe(), tasks.size()));
     }
-
 }

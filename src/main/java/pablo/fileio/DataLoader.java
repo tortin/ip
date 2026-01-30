@@ -1,9 +1,16 @@
+package pablo.fileio;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.Scanner;
+import pablo.task.Deadline;
+import pablo.task.Event;
+import pablo.task.Task;
+import pablo.task.TaskList;
+import pablo.task.ToDo;
 
 /**
  * Class for reading/writing a list of tasks.
@@ -16,7 +23,7 @@ public class DataLoader {
     }
 
     /**
-     * Reads a .txt file and returns a TaskList.
+     * Reads a .txt file and returns a pablo.task.TaskList.
      * @return taskList
      * @throws FileNotFoundException if the file does not exist.
      */

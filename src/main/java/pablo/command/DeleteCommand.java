@@ -1,3 +1,9 @@
+package pablo.command;
+
+import pablo.task.Task;
+import pablo.task.TaskList;
+import pablo.ui.Ui;
+
 public class DeleteCommand extends Command {
     private int idxToDelete;
 

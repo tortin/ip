@@ -139,8 +139,8 @@ You must specify a to and from timing for a Event task using the "/from" and "/t
     5. [D][X] return book (by: 31-05-2026_00:00)
     6. [E][ ] event project meeting (from: 14-03-2026_14:00 to: 14-03-2026_16:00)
     ____________________________________________________________
-The task specified doesn't exist!
-Enter an integer corresponding to a task to mark as incomplete!
+The specified task does not exist! Specify a number corresponding to a task!
+You must specify an number corresponding to a task to mark/unmark/delete!
 The task specified doesn't exist!
     ____________________________________________________________
     Bye. Hope to see you again soon!

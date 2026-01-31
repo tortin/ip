@@ -6,6 +6,7 @@ import pablo.command.AddCommand;
 import pablo.command.Command;
 import pablo.command.DeleteCommand;
 import pablo.command.ExitCommand;
+import pablo.command.FindCommand;
 import pablo.command.ListCommand;
 import pablo.command.MarkCommand;
 import pablo.command.NullCommand;
@@ -22,6 +23,11 @@ public class Parser {
 
     public Parser() {
 
+    }
+
+    public static Command parseFind(String rawCommand) {
+        String keyword = rawCommand.substring("find ".length());
+        return new FindCommand(keyword);
     }
 
     public static Command parseDeadline(String rawCommand) {
@@ -104,6 +110,8 @@ public class Parser {
             return parseDelete(rawCommand);
         } else if (action.equals("bye")) {
             return new ExitCommand();
+        } else if (action.equals("find")) {
+            return parseFind(rawCommand);
         } else {
             ui.showCommandError();
         }

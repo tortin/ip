@@ -42,4 +42,14 @@ public class TaskList {
         }
         return output.toString();
     }
+
+    public TaskList findTasks(String keyword) {
+        TaskList filtered = new TaskList();
+        for (Task task : this.taskList) {
+            if (task.getName().contains(keyword)) {
+                filtered.addTask(task);
+            }
+        }
+        return filtered;
+    }
 }

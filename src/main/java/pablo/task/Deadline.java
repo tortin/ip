@@ -2,6 +2,9 @@ package pablo.task;
 
 import java.time.LocalDateTime;
 
+/**
+ * Class representing a deadline task which consists of a deadline, and a name.
+ */
 public class Deadline extends Task {
     private LocalDateTime by;
 

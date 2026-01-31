@@ -3,6 +3,9 @@ package pablo.command;
 import pablo.task.TaskList;
 import pablo.ui.Ui;
 
+/**
+ * The command to unmark a task.
+ */
 public class UnmarkCommand extends Command {
     private int unmarkIdx;
 
@@ -10,6 +13,11 @@ public class UnmarkCommand extends Command {
         this.unmarkIdx = unmarkIdx;
     }
 
+    /**
+     * Unmarks the task corresponding to unmarkIdx.
+     * @param tasks
+     * @param ui
+     */
     public void execute(TaskList tasks, Ui ui) {
         try {
             tasks.unmarkTask(unmarkIdx);

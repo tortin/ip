@@ -1,5 +1,8 @@
 package pablo.task;
 
+/**
+ * Class representing a ToDo task, containing a name only.
+ */
 public class ToDo extends Task{
     public ToDo(String name, boolean isDone) {
         super(name, isDone);

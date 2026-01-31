@@ -15,7 +15,8 @@ public class DeleteCommand extends Command {
         try {
             Task task = tasks.getTask(idxToDelete);
             tasks.deleteTask(this.idxToDelete);
-            ui.showResponse(String.format("Noted. I've removed this task:\n    %s\n    Now you have %d tasks in the list.", task.describe(), tasks.size()));
+            ui.showResponse(String.format("Noted. I've removed this task:\n    %s\n " +
+                    "   Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IndexOutOfBoundsException e) {
             System.out.println("The task specified doesn't exist!");
         }

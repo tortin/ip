@@ -13,7 +13,8 @@ public class UnmarkCommand extends Command {
     public void execute(TaskList tasks, Ui ui) {
         try {
             tasks.unmarkTask(unmarkIdx);
-            ui.showResponse(String.format("Nice! I've marked this task as undone:\n    %s", tasks.getTask(unmarkIdx).describe()));
+            ui.showResponse(String.format("Nice! I've marked this task as undone:\n    %s",
+                    tasks.getTask(unmarkIdx).describe()));
         } catch (IndexOutOfBoundsException e) {
             ui.showIndexError();
         }

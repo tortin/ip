@@ -7,7 +7,7 @@ import pablo.ui.Ui;
  * A command which does nothing, used when the parser runs into an error and is unable to find the corresponding
  * command.
  */
-public class NullCommand extends Command{
+public class NullCommand extends Command {
 
     public NullCommand() {
 

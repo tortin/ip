@@ -2,6 +2,7 @@ package pablo;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+
 import pablo.command.Command;
 import pablo.fileio.DataLoader;
 import pablo.parser.Parser;
@@ -28,7 +29,7 @@ public class Pablo {
     public void run() throws IOException {
         ui.showWelcome();
         boolean isExit = false;
-        while(!isExit) {
+        while (!isExit) {
             String rawCommand = ui.readCommand();
             Command command = Parser.parse(rawCommand);
             command.execute(tasks, ui);

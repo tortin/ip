@@ -6,7 +6,7 @@ import pablo.ui.Ui;
 /**
  * The command to list all tasks currently.
  */
-public class ListCommand extends Command{
+public class ListCommand extends Command {
 
     public ListCommand() {
 

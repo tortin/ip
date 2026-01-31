@@ -2,6 +2,10 @@ package pablo.task;
 
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Class representing a type of task. A task has a name, can be complete/incomplete, and optionally contains
+ * dateTimes representing the start/end timings.
+ */
 public abstract class Task {
     public static final DateTimeFormatter DATE_FORMATTER = DateTimeFormatter.ofPattern("dd-MM-yyyy_HH:mm");
     private String name;
@@ -12,10 +16,16 @@ public abstract class Task {
         this.isDone = isDone;
     }
 
+    /**
+     * Marks a task as complete.
+     */
     public void markTask() {
         this.isDone = true;
     }
 
+    /**
+     * Marks a task as incomplete.
+     */
     public void unmarkTask() {
         this.isDone = false;
     }
@@ -30,5 +40,9 @@ public abstract class Task {
 
     public abstract String getType();
 
+    /**
+     * Returns a string describing the task.
+     * @return String
+     */
     public abstract String describe();
 }

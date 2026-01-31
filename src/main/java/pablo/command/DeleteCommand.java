@@ -4,6 +4,9 @@ import pablo.task.Task;
 import pablo.task.TaskList;
 import pablo.ui.Ui;
 
+/**
+ * The command which deletes a task from the task list.
+ */
 public class DeleteCommand extends Command {
     private int idxToDelete;
 
@@ -11,6 +14,11 @@ public class DeleteCommand extends Command {
         this.idxToDelete = idxToDelete;
     }
 
+    /**
+     * Deletes the task corresponding to idxToDelete from tasks.
+     * @param tasks
+     * @param ui
+     */
     public void execute(TaskList tasks, Ui ui) {
         try {
             Task task = tasks.getTask(idxToDelete);

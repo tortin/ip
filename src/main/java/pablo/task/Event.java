@@ -2,6 +2,9 @@ package pablo.task;
 
 import java.time.LocalDateTime;
 
+/**
+ * Class representing an event task, which consists of a from and to dateTime, and a name.
+ */
 public class Event extends Task{
     private LocalDateTime from;
     private LocalDateTime to;

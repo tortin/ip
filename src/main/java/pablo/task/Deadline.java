@@ -13,10 +13,6 @@ public class Deadline extends Task {
         this.by = by;
     }
 
-    public String getType() {
-        return "D";
-    }
-
     public LocalDateTime getBy() {
         return this.by;
     }

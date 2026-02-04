@@ -35,6 +35,7 @@ public class Parser {
 
     /**
      * Parses a deadline, in the format "deadline &lttask name&gt /by &ltdateTime&gt"
+     *
      * @param rawCommand A string representing the command
      * @return An add command if successful/A Null command if parsing is unsuccessful.
      */
@@ -55,6 +56,7 @@ public class Parser {
 
     /**
      * Parses a event, in the format "deadline &lttask name&gt /from &ltfromDateTime&gt /to &lttoDateTime&gt"
+     *
      * @param rawCommand A string representing the command
      * @return An add command if successful/A Null command if parsing is unsuccessful.
      */
@@ -76,6 +78,7 @@ public class Parser {
 
     /**
      * Parses a mark command, in the format "mark &ltidxToMark&gt"
+     *
      * @param rawCommand A string representing the command
      * @return A mark command if successful/A Null command if parsing is unsuccessful.
      */
@@ -91,6 +94,7 @@ public class Parser {
 
     /**
      * Parses an ummark command, in the format "unmark &ltidxToUnmark&gt"
+     *
      * @param rawCommand A string representing the command
      * @return An unmark command if successful/A Null command if parsing is unsuccessful.
      */
@@ -106,6 +110,7 @@ public class Parser {
 
     /**
      * Parses a delete command, in the format "unmark &ltidxToDelete&gt"
+     *
      * @param rawCommand A string representing the command
      * @return A delete command if successful/A Null command if parsing is unsuccessful.
      */
@@ -121,6 +126,7 @@ public class Parser {
 
     /**
      * Parses a string based on the first token by space separation.
+     *
      * @param rawCommand A string representing the command
      * @return A corresponding command if successful/A Null command if parsing is unsuccessful.
      */

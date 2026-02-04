@@ -11,32 +11,37 @@ import pablo.ui.Ui;
 
 public class Pablo {
 
-    private DataLoader dl;
+    private DataLoader storage;
     private TaskList tasks;
     private Ui ui;
 
     public Pablo(String fileName) {
         ui = new Ui();
-        dl = new DataLoader(fileName);
+        storage = new DataLoader(fileName);
         try {
-            tasks = dl.readFile();
+            tasks = storage.readFile();
         } catch (Exception e) {
             ui.showLoadingError();
             tasks = new TaskList();
         }
     }
 
+    /**
+     * Runs the Pablo chatbot, terminated when the user enters "bye"
+     *
+     * @throws IOException
+     */
     public void run() throws IOException {
         ui.showWelcome();
         boolean isExit = false;
         while (!isExit) {
             String rawCommand = ui.readCommand();
             Command command = Parser.parse(rawCommand);
-            command.execute(tasks, ui);
+            command.execute(tasks, ui, storage);
             isExit = command.isExit();
         }
         try {
-            dl.writeFile(tasks);
+            storage.writeFile(tasks);
         } catch (IOException e) {
             ui.showWriteError();
         }

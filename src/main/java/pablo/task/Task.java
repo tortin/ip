@@ -38,10 +38,9 @@ public abstract class Task {
         return this.isDone;
     }
 
-    public abstract String getType();
-
     /**
-     * Returns a string describing the task.
+     * Returns a string describing the task in the format to be printed by the ui.
+     *
      * @return String
      */
     public abstract String describe();

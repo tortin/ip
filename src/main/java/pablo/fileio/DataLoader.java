@@ -25,6 +25,7 @@ public class DataLoader {
 
     /**
      * Reads a .txt file and returns a pablo.task.TaskList.
+     *
      * @return taskList
      * @throws FileNotFoundException if the file does not exist.
      */
@@ -57,6 +58,7 @@ public class DataLoader {
 
     /**
      * Writes the task list to the file.
+     *
      * @param tasks The task list to write.
      * @throws IOException if there is an error in IO.
      */

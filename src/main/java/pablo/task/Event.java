@@ -15,10 +15,6 @@ public class Event extends Task {
         this.to = to;
     }
 
-    public String getType() {
-        return "E";
-    }
-
     public LocalDateTime getFrom() {
         return this.from;
     }

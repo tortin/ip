@@ -1,5 +1,6 @@
 package pablo.command;
 
+import pablo.fileio.DataLoader;
 import pablo.task.TaskList;
 import pablo.ui.Ui;
 
@@ -15,10 +16,12 @@ public class NullCommand extends Command {
 
     /**
      * Does nothing.
-     * @param tasks
-     * @param ui
+     *
+     * @param tasks The current task list.
+     * @param ui The ui object.
+     * @param storage The dataloader object to read/write tasks.
      */
-    public void execute(TaskList tasks, Ui ui) {
+    public void execute(TaskList tasks, Ui ui, DataLoader storage) {
 
     }
 }

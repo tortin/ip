@@ -2,9 +2,9 @@ package pablo.command;
 
 import java.io.IOException;
 import pablo.fileio.DataLoader;
+import pablo.messages.MessageFormatter;
 import pablo.task.Task;
 import pablo.task.TaskList;
-import pablo.ui.Ui;
 
 /**
  * The command which adds the task to the task list.
@@ -21,17 +21,17 @@ public class AddCommand extends Command {
      * Adds the task to the task list.
      *
      * @param tasks The current task list.
-     * @param ui The ui object.
      * @param storage The dataloader object to read/write tasks.
      */
-    public void execute(TaskList tasks, Ui ui, DataLoader storage) {
-        tasks.addTask(task);
-        ui.showResponse(String.format("Got it. I've added this task:\n    %s\n    Now you have %d tasks in the list.",
-                task.describe(), tasks.size()));
+    @Override
+    public CommandResult execute(TaskList tasks, DataLoader storage) {
         try {
+            tasks.addTask(task);
             storage.writeFile(tasks);
+            return new CommandResult(String.format("Got it. I've added this task:\n    %s\n    " +
+                    "Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IOException e) {
-            ui.showWriteError();
+            return new CommandResult(MessageFormatter.writeErrorMessage());
         }
     }
 

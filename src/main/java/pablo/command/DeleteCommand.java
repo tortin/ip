@@ -2,9 +2,9 @@ package pablo.command;
 
 import java.io.IOException;
 import pablo.fileio.DataLoader;
+import pablo.messages.MessageFormatter;
 import pablo.task.Task;
 import pablo.task.TaskList;
-import pablo.ui.Ui;
 
 /**
  * The command which deletes a task from the task list.
@@ -20,22 +20,20 @@ public class DeleteCommand extends Command {
      * Deletes the task corresponding to idxToDelete from tasks.
      *
      * @param tasks The current task list.
-     * @param ui The ui object.
      * @param storage The dataloader object to read/write tasks.
      */
-    public void execute(TaskList tasks, Ui ui, DataLoader storage) {
+    @Override
+    public CommandResult execute(TaskList tasks, DataLoader storage) {
         try {
             Task task = tasks.getTask(idxToDelete);
             tasks.deleteTask(this.idxToDelete);
-            ui.showResponse(String.format("Noted. I've removed this task:\n    %s\n " +
+            storage.writeFile(tasks);
+            return new CommandResult(String.format("Noted. I've removed this task:\n    %s\n " +
                     "   Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("The task specified doesn't exist!");
-        }
-        try {
-            storage.writeFile(tasks);
+            return new CommandResult("The task specified doesn't exist!");
         } catch (IOException e) {
-            ui.showWriteError();
+            return new CommandResult(MessageFormatter.writeErrorMessage());
         }
     }
 }

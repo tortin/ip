@@ -2,7 +2,6 @@ package pablo.parser;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
-
 import pablo.command.AddCommand;
 import pablo.command.Command;
 import pablo.command.DeleteCommand;
@@ -12,18 +11,16 @@ import pablo.command.ListCommand;
 import pablo.command.MarkCommand;
 import pablo.command.NullCommand;
 import pablo.command.UnmarkCommand;
+import pablo.messages.MessageFormatter;
 import pablo.task.Deadline;
 import pablo.task.Event;
 import pablo.task.Task;
 import pablo.task.ToDo;
-import pablo.ui.Ui;
 
 /**
  * Class to parse user input into the corresponding commands and parameters.
  */
 public class Parser {
-
-    private static Ui ui = new Ui();
 
     public Parser() {
 
@@ -46,11 +43,9 @@ public class Parser {
             LocalDateTime deadline = LocalDateTime.parse(parts[1], Task.DATE_FORMATTER);
             return new AddCommand(new Deadline(task, false, deadline));
         } catch (IndexOutOfBoundsException e) {
-            ui.showDeadlineError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.deadlineErrorMessage());
         } catch (DateTimeParseException e) {
-            ui.showDateTimeFormatError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.dateTimeFormatErrorMessage());
         }
     }
 
@@ -68,11 +63,9 @@ public class Parser {
             LocalDateTime to = LocalDateTime.parse(parts[2], Task.DATE_FORMATTER);
             return new AddCommand(new Event(name, false, from, to));
         } catch (IndexOutOfBoundsException e) {
-            ui.showEventError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.eventErrorMessage());
         } catch (DateTimeParseException e) {
-            ui.showDateTimeFormatError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.dateTimeFormatErrorMessage());
         }
     }
 
@@ -87,8 +80,7 @@ public class Parser {
             int markIdx = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new MarkCommand(markIdx);
         } catch (NumberFormatException e) {
-            ui.showNumFormatError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.numFormatErrorMessage());
         }
     }
 
@@ -103,8 +95,7 @@ public class Parser {
             int unmarkIdx = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new UnmarkCommand(unmarkIdx);
         } catch (NumberFormatException e) {
-            ui.showNumFormatError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.numFormatErrorMessage());
         }
     }
 
@@ -119,8 +110,7 @@ public class Parser {
             int idxToDelete = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new DeleteCommand(idxToDelete);
         } catch (NumberFormatException e) {
-            ui.showNumFormatError();
-            return new NullCommand();
+            return new NullCommand(MessageFormatter.numFormatErrorMessage());
         }
     }
 
@@ -152,8 +142,8 @@ public class Parser {
         } else if (action.equals("find")) {
             return parseFind(rawCommand);
         } else {
-            ui.showCommandError();
+            return new NullCommand(MessageFormatter.commandErrorMessage());
         }
-        return new NullCommand();
+
     }
 }

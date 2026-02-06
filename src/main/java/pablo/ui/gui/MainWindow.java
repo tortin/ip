@@ -51,4 +51,10 @@ public class MainWindow extends AnchorPane {
         );
         userInput.clear();
     }
+
+    public void showStartupMessage(String message) {
+        dialogContainer.getChildren().add(
+                DialogBox.getPabloDialog(message, pabloImage)
+        );
+    }
 }

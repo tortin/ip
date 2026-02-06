@@ -21,6 +21,9 @@ public class MainGui extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(MainGui.class.getResource("/view/MainWindow.fxml"));
             AnchorPane ap = fxmlLoader.load();
             Scene scene = new Scene(ap);
+            MainWindow controller = fxmlLoader.getController();
+            controller.setPablo(pablo);
+            controller.showStartupMessage("Hello! I'm Pablo. How can I help you today?");
             stage.setScene(scene);
             fxmlLoader.<MainWindow>getController().setPablo(pablo);
             stage.show();

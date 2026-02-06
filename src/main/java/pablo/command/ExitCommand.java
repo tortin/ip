@@ -1,8 +1,8 @@
 package pablo.command;
 
 import pablo.fileio.DataLoader;
+import pablo.messages.MessageFormatter;
 import pablo.task.TaskList;
-import pablo.ui.Ui;
 
 /**
  * The command which signifies exiting Pablo.
@@ -16,11 +16,11 @@ public class ExitCommand extends Command {
     /**
      * Does nothing.
      * @param tasks The current task list.
-     * @param ui The ui object.
      * @param storage The dataloader object to read/write tasks.
      */
-    public void execute(TaskList tasks, Ui ui, DataLoader storage) {
-
+    @Override
+    public CommandResult execute(TaskList tasks, DataLoader storage) {
+        return new CommandResult(MessageFormatter.goodbyeMessage());
     }
 
     /**

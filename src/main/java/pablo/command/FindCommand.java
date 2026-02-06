@@ -1,8 +1,8 @@
 package pablo.command;
 
 import pablo.fileio.DataLoader;
+import pablo.messages.MessageFormatter;
 import pablo.task.TaskList;
-import pablo.ui.Ui;
 
 /**
  * The command to filter the task list by a keyword and print them.
@@ -19,11 +19,10 @@ public class FindCommand extends Command {
      * Finds the tasks whose names contains the keyword and lists them.
      *
      * @param tasks The current task list.
-     * @param ui The ui object.
      * @param storage The dataloader object to read/write tasks.
      */
     @Override
-    public void execute(TaskList tasks, Ui ui, DataLoader storage) {
-        ui.listTasks(tasks.findTasks(this.keyword));
+    public CommandResult execute(TaskList tasks, DataLoader storage) {
+        return new CommandResult(MessageFormatter.listTasks(tasks.findTasks(this.keyword)));
     }
 }

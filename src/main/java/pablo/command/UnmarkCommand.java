@@ -25,6 +25,7 @@ public class UnmarkCommand extends Command {
     public CommandResult execute(TaskList tasks, DataLoader storage) {
         try {
             tasks.unmarkTask(unmarkIdx);
+            assert !tasks.getTask(unmarkIdx).getDone() : "Task was not unmarked successfully!";
             storage.writeFile(tasks);
             return new CommandResult(String.format("Nice! I've marked this task as undone:\n    %s",
                     tasks.getTask(unmarkIdx).describe()));

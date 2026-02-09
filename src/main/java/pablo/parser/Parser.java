@@ -121,6 +121,7 @@ public class Parser {
      * @return A corresponding command if successful/A Null command if parsing is unsuccessful.
      */
     public static Command parse(String rawCommand) {
+        assert rawCommand != null : "The command should not be null!";
         String action = rawCommand.split(" ")[0];
 
         if (action.equals("list")) {

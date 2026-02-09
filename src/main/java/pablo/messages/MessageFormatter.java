@@ -97,4 +97,11 @@ public class MessageFormatter {
     public static String commandErrorMessage() {
         return "I don't understand that command!";
     }
+
+    /**
+     * Returns the error message when the task is already in the task list.
+     */
+    public static String taskDuplicateMessage() {
+        return "The task is already in the task list!";
+    }
 }

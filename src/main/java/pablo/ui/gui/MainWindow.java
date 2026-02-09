@@ -1,5 +1,6 @@
 package pablo.ui.gui;
 
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
@@ -8,6 +9,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 import pablo.Pablo;
+import pablo.command.CommandResult;
 
 /**
  * Controller for the main GUI.
@@ -44,12 +46,17 @@ public class MainWindow extends AnchorPane {
     @FXML
     private void handleUserInput() {
         String input = userInput.getText();
-        String response = pablo.parseAndExecute(input).getResponse();
+        CommandResult result = pablo.parseAndExecute(input);
+        boolean isExit = result.getIsExit();
+        String response = result.getResponse();
         dialogContainer.getChildren().addAll(
                 DialogBox.getUserDialog(input, userImage),
                 DialogBox.getPabloDialog(response, pabloImage)
         );
         userInput.clear();
+        if (isExit) {
+            Platform.exit(); // clean JavaFX shutdown
+        }
     }
 
     public void showStartupMessage(String message) {

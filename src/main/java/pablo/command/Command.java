@@ -16,8 +16,4 @@ public abstract class Command {
      * @param storage The dataloader object to read/write tasks.
      */
     public abstract CommandResult execute(TaskList tasks, DataLoader storage);
-
-    public boolean isExit() {
-        return false;
-    }
 }

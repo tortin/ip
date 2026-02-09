@@ -9,10 +9,6 @@ import pablo.task.TaskList;
  */
 public class ListCommand extends Command {
 
-    public ListCommand() {
-
-    }
-
     /**
      * Lists all tasks in the task list.
      *

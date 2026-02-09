@@ -9,10 +9,6 @@ import pablo.task.TaskList;
  */
 public class ExitCommand extends Command {
 
-    public ExitCommand() {
-
-    }
-
     /**
      * Does nothing.
      * @param tasks The current task list.
@@ -20,15 +16,6 @@ public class ExitCommand extends Command {
      */
     @Override
     public CommandResult execute(TaskList tasks, DataLoader storage) {
-        return new CommandResult(MessageFormatter.GOODBYE_MESSAGE);
-    }
-
-    /**
-     * Returns true to indicate exiting Pablo.
-     * @return true
-     */
-    @Override
-    public boolean isExit() {
-        return true;
+        return new CommandResult(MessageFormatter.GOODBYE_MESSAGE, true);
     }
 }

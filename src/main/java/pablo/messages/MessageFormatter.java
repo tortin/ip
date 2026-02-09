@@ -21,6 +21,7 @@ public class MessageFormatter {
     public static final String NUM_FORMAT_ERROR_MESSAGE = "You must specify an number corresponding to a task" +
             " to mark/unmark/delete!";
     public static final String COMMAND_ERROR_MESSAGE = "I don't understand that command!";
+    public static final String DUPLICATE_TASK_MESSAGE = "The task already exists in the task list!";
 
     /**
      * Returns the current task list.

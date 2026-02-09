@@ -27,7 +27,7 @@ public class AddCommand extends Command {
     @Override
     public CommandResult execute(TaskList tasks, DataLoader storage) {
         if (tasks.containsTask(task)) {
-            return new CommandResult(MessageFormatter.taskDuplicateMessage());
+            return new CommandResult(MessageFormatter.DUPLICATE_TASK_MESSAGE);
         }
         try {
             tasks.addTask(task);

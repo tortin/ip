@@ -42,7 +42,6 @@ public class TaskList {
      * @param idx
      */
     public void deleteTask(int idx) {
-        Task task = this.taskList.get(idx);
         this.taskList.remove(idx);
     }
 

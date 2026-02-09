@@ -27,6 +27,7 @@ public class DeleteCommand extends Command {
         try {
             Task task = tasks.getTask(idxToDelete);
             tasks.deleteTask(this.idxToDelete);
+            assert !tasks.containsTask(task) : "Task is still in task list!";
             storage.writeFile(tasks);
             return new CommandResult(String.format("Noted. I've removed this task:\n    %s\n " +
                     "   Now you have %d tasks in the list.", task.describe(), tasks.size()));

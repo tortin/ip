@@ -22,7 +22,6 @@ public class MessageFormatter {
             " to mark/unmark/delete!";
     public static final String COMMAND_ERROR_MESSAGE = "I don't understand that command!";
 
-
     /**
      * Returns the current task list.
      *

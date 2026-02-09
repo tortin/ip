@@ -8,6 +8,12 @@ import java.time.LocalDateTime;
 public class Deadline extends Task {
     private LocalDateTime by;
 
+    /**
+     * Creates a new Deadline object.
+     * @param name The name of the task.
+     * @param isDone Whether the task is completed.
+     * @param by The date and time the task has to be completed by.
+     */
     public Deadline(String name, boolean isDone, LocalDateTime by) {
         super(name, isDone);
         this.by = by;
@@ -17,6 +23,7 @@ public class Deadline extends Task {
         return this.by;
     }
 
+    @Override
     public String describe() {
         return String.format("[D][%s] %s (by: %s)", this.getDone() ? "X" : " ",
                 this.getName(), this.by.format(DATE_FORMATTER));
@@ -47,8 +54,7 @@ public class Deadline extends Task {
 
         Deadline other = (Deadline) obj;
 
-        return this.getName().equals(other.getName()) &&
-                this.getDone() == other.getDone() &&
-                this.by.equals(other.by);
+        return this.getName().equals(other.getName()) && this.getDone() == other.getDone()
+                && this.by.equals(other.by);
     }
 }

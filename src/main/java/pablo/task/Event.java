@@ -9,6 +9,13 @@ public class Event extends Task {
     private LocalDateTime from;
     private LocalDateTime to;
 
+    /**
+     * Creates a new Event object
+     * @param name The name of the task.
+     * @param done Whether the task is completed.
+     * @param from The start date and time of the event.
+     * @param to The end date and time of the event.
+     */
     public Event(String name, boolean done, LocalDateTime from, LocalDateTime to) {
         super(name, done);
         this.from = from;
@@ -23,6 +30,7 @@ public class Event extends Task {
         return this.to;
     }
 
+    @Override
     public String describe() {
         return String.format("[E][%s] %s (from: %s to: %s)", this.getDone() ? "X" : " ", this.getName(),
                 this.from.format(DATE_FORMATTER), this.to.format(DATE_FORMATTER));
@@ -53,9 +61,9 @@ public class Event extends Task {
 
         Event other = (Event) obj;
 
-        return this.getName().equals(other.getName()) &&
-                this.getDone() == other.getDone() &&
-                this.from.equals(other.from) &&
-                this.to.equals(other.to);
+        return this.getName().equals(other.getName())
+                && this.getDone() == other.getDone()
+                && this.from.equals(other.from)
+                && this.to.equals(other.to);
     }
 }

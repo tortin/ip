@@ -1,6 +1,7 @@
 package pablo.command;
 
 import java.io.IOException;
+
 import pablo.fileio.DataLoader;
 import pablo.messages.MessageFormatter;
 import pablo.task.Task;
@@ -29,8 +30,8 @@ public class DeleteCommand extends Command {
             tasks.deleteTask(this.idxToDelete);
             assert !tasks.containsTask(task) : "Task is still in task list!";
             storage.writeFile(tasks);
-            return new CommandResult(String.format("Noted. I've removed this task:\n    %s\n " +
-                    "   Now you have %d tasks in the list.", task.describe(), tasks.size()));
+            return new CommandResult(String.format("Noted. I've removed this task:\n    %s\n "
+                    + "   Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IndexOutOfBoundsException e) {
             return new CommandResult(MessageFormatter.INDEX_ERROR_MESSAGE);
         } catch (IOException e) {

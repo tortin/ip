@@ -19,6 +19,10 @@ import pablo.task.ToDo;
 public class DataLoader {
     private String fileName;
 
+    /**
+     * Creates a new DataLoader object.
+     * @param fileName The path to the data file.
+     */
     public DataLoader(String fileName) {
         assert fileName != null : "File name should not be null!";
         assert !fileName.equals("") : "File name should not be empty!";
@@ -39,26 +43,26 @@ public class DataLoader {
 
         while (s.hasNext()) {
             // Split string by | and leading + trailing spaces
-            String[] task_arr = s.nextLine().split("\\s*\\|\\s*");
-            assert task_arr.length <= 5 : "Invalid format found in file!";
-            char task_type = task_arr[0].charAt(0);
-            assert task_type == 'T' || task_type == 'D' || task_type == 'E' : "Unknown task type in file!";
-            assert task_arr[1].equals("1") || task_arr[1].equals("0") : "Unknown completed status in file!";
-            boolean isDone = task_arr[1].equals("1");
+            String[] taskArr = s.nextLine().split("\\s*\\|\\s*");
+            assert taskArr.length <= 5 : "Invalid format found in file!";
+            char taskType = taskArr[0].charAt(0);
+            assert taskType == 'T' || taskType == 'D' || taskType == 'E' : "Unknown task type in file!";
+            assert taskArr[1].equals("1") || taskArr[1].equals("0") : "Unknown completed status in file!";
+            boolean isDone = taskArr[1].equals("1");
 
-            switch (task_type) {
+            switch (taskType) {
             case 'T':
-                assert task_arr.length == 3 : "ToDo task must have 3 fields only!";
-                tasks.addTask(new ToDo(task_arr[2], isDone));
+                assert taskArr.length == 3 : "ToDo task must have 3 fields only!";
+                tasks.addTask(new ToDo(taskArr[2], isDone));
                 break;
             case 'D':
-                assert task_arr.length == 4 : "Deadline task must have 4 fields only!";
-                tasks.addTask(new Deadline(task_arr[2], isDone, LocalDateTime.parse(task_arr[3], Task.DATE_FORMATTER)));
+                assert taskArr.length == 4 : "Deadline task must have 4 fields only!";
+                tasks.addTask(new Deadline(taskArr[2], isDone, LocalDateTime.parse(taskArr[3], Task.DATE_FORMATTER)));
                 break;
             case 'E':
-                assert task_arr.length == 5: "Event task must have 5 fields only!";
-                tasks.addTask(new Event(task_arr[2], isDone, LocalDateTime.parse(task_arr[3], Task.DATE_FORMATTER),
-                        LocalDateTime.parse(task_arr[4], Task.DATE_FORMATTER)));
+                assert taskArr.length == 5 : "Event task must have 5 fields only!";
+                tasks.addTask(new Event(taskArr[2], isDone, LocalDateTime.parse(taskArr[3], Task.DATE_FORMATTER),
+                        LocalDateTime.parse(taskArr[4], Task.DATE_FORMATTER)));
                 break;
             default:
                 break;

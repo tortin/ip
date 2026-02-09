@@ -8,6 +8,9 @@ import java.util.ArrayList;
 public class TaskList {
     private ArrayList<Task> taskList;
 
+    /**
+     * Creates a new empty TaskList.
+     */
     public TaskList() {
         this.taskList = new ArrayList<Task>();
     }
@@ -74,6 +77,11 @@ public class TaskList {
         return output.toString();
     }
 
+    /**
+     * Filters the task list by the keyword.
+     * @param keyword The keyword to search by.
+     * @return A tasklist in which the name contains the keyword.
+     */
     public TaskList findTasks(String keyword) {
         TaskList filtered = new TaskList();
         for (Task task : this.taskList) {
@@ -84,6 +92,11 @@ public class TaskList {
         return filtered;
     }
 
+    /**
+     * Checks if the task list contains a given task
+     * @param checkTask The task to check against.
+     * @return True if the task list contains the task, false otherwise.
+     */
     public boolean containsTask(Task checkTask) {
         for (Task task : taskList) {
             if (checkTask.equals(task)) {

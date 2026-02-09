@@ -11,6 +11,11 @@ public abstract class Task {
     private String name;
     private boolean isDone;
 
+    /**
+     * Constructor for a Task.
+     * @param name The name of the task.
+     * @param isDone Whether the task is completed.
+     */
     public Task(String name, boolean isDone) {
         this.name = name;
         this.isDone = isDone;

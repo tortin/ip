@@ -5,11 +5,18 @@ import pablo.fileio.DataLoader;
 import pablo.parser.Parser;
 import pablo.task.TaskList;
 
+/**
+ * The class for a Pablo chatbot.
+ */
 public class Pablo {
 
     private DataLoader storage;
     private TaskList tasks;
 
+    /**
+     * Creates a new Pablo object linked to the path fileName.
+     * @param fileName The path to the data file.
+     */
     public Pablo(String fileName) {
         storage = new DataLoader(fileName);
         try {

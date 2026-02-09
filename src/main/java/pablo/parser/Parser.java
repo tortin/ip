@@ -2,6 +2,7 @@ package pablo.parser;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeParseException;
+
 import pablo.command.AddCommand;
 import pablo.command.Command;
 import pablo.command.DeleteCommand;
@@ -22,6 +23,11 @@ import pablo.task.ToDo;
  */
 public class Parser {
 
+    /**
+     * Parses a FindCommand in the format find &ltkeyword&gt.
+     * @param rawCommand A string representing the command.
+     * @return A FindCommand if successful.
+     */
     public static Command parseFind(String rawCommand) {
         String keyword = rawCommand.substring("find ".length());
         return new FindCommand(keyword);
@@ -30,8 +36,8 @@ public class Parser {
     /**
      * Parses a deadline, in the format "deadline &lttask name&gt /by &ltdateTime&gt"
      *
-     * @param rawCommand A string representing the command
-     * @return An add command if successful/A Null command if parsing is unsuccessful.
+     * @param rawCommand A string representing the command.
+     * @return An AddCommand if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parseDeadline(String rawCommand) {
         String[] parts = rawCommand.split(" /by ", 2);
@@ -49,8 +55,8 @@ public class Parser {
     /**
      * Parses a event, in the format "deadline &lttask name&gt /from &ltfromDateTime&gt /to &lttoDateTime&gt"
      *
-     * @param rawCommand A string representing the command
-     * @return An add command if successful/A Null command if parsing is unsuccessful.
+     * @param rawCommand A string representing the command.
+     * @return An AddCommand if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parseEvent(String rawCommand) {
         String[] parts = rawCommand.split(" /from | /to ", 3);
@@ -69,8 +75,8 @@ public class Parser {
     /**
      * Parses a mark command, in the format "mark &ltidxToMark&gt"
      *
-     * @param rawCommand A string representing the command
-     * @return A mark command if successful/A Null command if parsing is unsuccessful.
+     * @param rawCommand A string representing the command.
+     * @return A MarkCommand if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parseMark(String rawCommand) {
         try {
@@ -84,8 +90,8 @@ public class Parser {
     /**
      * Parses an ummark command, in the format "unmark &ltidxToUnmark&gt"
      *
-     * @param rawCommand A string representing the command
-     * @return An unmark command if successful/A Null command if parsing is unsuccessful.
+     * @param rawCommand A string representing the command.
+     * @return An UnmarkCommand if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parseUnmark(String rawCommand) {
         try {
@@ -100,7 +106,7 @@ public class Parser {
      * Parses a delete command, in the format "unmark &ltidxToDelete&gt"
      *
      * @param rawCommand A string representing the command
-     * @return A delete command if successful/A Null command if parsing is unsuccessful.
+     * @return A DeleteCommand if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parseDelete(String rawCommand) {
         try {
@@ -115,7 +121,7 @@ public class Parser {
      * Parses a string based on the first token by space separation.
      *
      * @param rawCommand A string representing the command
-     * @return A corresponding command if successful/A Null command if parsing is unsuccessful.
+     * @return A corresponding command if successful/A NullCommand if parsing is unsuccessful.
      */
     public static Command parse(String rawCommand) {
         assert rawCommand != null : "The command should not be null!";

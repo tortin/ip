@@ -59,6 +59,10 @@ public class MainWindow extends AnchorPane {
         }
     }
 
+    /**
+     * Shows a message on startup, instead of waiting for the first user prompt.
+     * @param message The message to show.
+     */
     public void showStartupMessage(String message) {
         dialogContainer.getChildren().add(
                 DialogBox.getPabloDialog(message, pabloImage)

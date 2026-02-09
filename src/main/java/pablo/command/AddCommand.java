@@ -1,6 +1,7 @@
 package pablo.command;
 
 import java.io.IOException;
+
 import pablo.fileio.DataLoader;
 import pablo.messages.MessageFormatter;
 import pablo.task.Task;
@@ -13,6 +14,10 @@ public class AddCommand extends Command {
 
     private Task task;
 
+    /**
+     * Creates a new AddCommand.
+     * @param task The task to add to the task list.
+     */
     public AddCommand(Task task) {
         assert task != null : "Task cannot be null";
         this.task = task;
@@ -33,8 +38,8 @@ public class AddCommand extends Command {
             tasks.addTask(task);
             assert tasks.containsTask(task) : "The task is not found in the task list!";
             storage.writeFile(tasks);
-            return new CommandResult(String.format("Got it. I've added this task:\n    %s\n    " +
-                    "Now you have %d tasks in the list.", task.describe(), tasks.size()));
+            return new CommandResult(String.format("Got it. I've added this task:\n    %s\n    "
+                    + "Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IOException e) {
             return new CommandResult(MessageFormatter.WRITE_ERROR_MESSAGE);
         }

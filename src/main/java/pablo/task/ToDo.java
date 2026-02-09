@@ -4,10 +4,16 @@ package pablo.task;
  * Class representing a ToDo task, containing a name only.
  */
 public class ToDo extends Task {
+    /**
+     * Creates a ToDo task.
+     * @param name The name of the task.
+     * @param isDone Whether the task is completed.
+     */
     public ToDo(String name, boolean isDone) {
         super(name, isDone);
     }
 
+    @Override
     public String describe() {
         return String.format("[T][%s] %s", this.getDone() ? "X" : " ", this.getName());
     }
@@ -36,7 +42,6 @@ public class ToDo extends Task {
 
         ToDo other = (ToDo) obj;
 
-        return this.getName().equals(other.getName()) &&
-                this.getDone() == other.getDone();
+        return this.getName().equals(other.getName()) && this.getDone() == other.getDone();
     }
 }

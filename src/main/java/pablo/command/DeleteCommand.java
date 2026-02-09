@@ -32,9 +32,9 @@ public class DeleteCommand extends Command {
             return new CommandResult(String.format("Noted. I've removed this task:\n    %s\n " +
                     "   Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IndexOutOfBoundsException e) {
-            return new CommandResult("The task specified doesn't exist!");
+            return new CommandResult(MessageFormatter.INDEX_ERROR_MESSAGE);
         } catch (IOException e) {
-            return new CommandResult(MessageFormatter.writeErrorMessage());
+            return new CommandResult(MessageFormatter.WRITE_ERROR_MESSAGE);
         }
     }
 }

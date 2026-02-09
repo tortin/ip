@@ -30,9 +30,9 @@ public class UnmarkCommand extends Command {
             return new CommandResult(String.format("Nice! I've marked this task as undone:\n    %s",
                     tasks.getTask(unmarkIdx).describe()));
         } catch (IndexOutOfBoundsException e) {
-            return new CommandResult(MessageFormatter.indexErrorMessage());
+            return new CommandResult(MessageFormatter.INDEX_ERROR_MESSAGE);
         } catch (IOException e) {
-            return new CommandResult(MessageFormatter.writeErrorMessage());
+            return new CommandResult(MessageFormatter.WRITE_ERROR_MESSAGE);
         }
     }
 }

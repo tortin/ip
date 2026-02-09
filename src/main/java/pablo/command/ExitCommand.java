@@ -20,7 +20,7 @@ public class ExitCommand extends Command {
      */
     @Override
     public CommandResult execute(TaskList tasks, DataLoader storage) {
-        return new CommandResult(MessageFormatter.goodbyeMessage());
+        return new CommandResult(MessageFormatter.GOODBYE_MESSAGE);
     }
 
     /**

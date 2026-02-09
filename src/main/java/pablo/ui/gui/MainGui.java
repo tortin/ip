@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import pablo.Pablo;
+import pablo.messages.MessageFormatter;
 
 /**
  * A GUI for Pablo using FXML.
@@ -23,7 +24,7 @@ public class MainGui extends Application {
             Scene scene = new Scene(ap);
             MainWindow controller = fxmlLoader.getController();
             controller.setPablo(pablo);
-            controller.showStartupMessage("Hello! I'm Pablo. How can I help you today?");
+            controller.showStartupMessage(MessageFormatter.WELCOME_MESSAGE);
             stage.setScene(scene);
             fxmlLoader.<MainWindow>getController().setPablo(pablo);
             stage.show();

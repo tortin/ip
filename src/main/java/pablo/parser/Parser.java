@@ -22,9 +22,6 @@ import pablo.task.ToDo;
  */
 public class Parser {
 
-    public Parser() {
-
-    }
     public static Command parseFind(String rawCommand) {
         String keyword = rawCommand.substring("find ".length());
         return new FindCommand(keyword);
@@ -43,9 +40,9 @@ public class Parser {
             LocalDateTime deadline = LocalDateTime.parse(parts[1], Task.DATE_FORMATTER);
             return new AddCommand(new Deadline(task, false, deadline));
         } catch (IndexOutOfBoundsException e) {
-            return new NullCommand(MessageFormatter.deadlineErrorMessage());
+            return new NullCommand(MessageFormatter.DEADLINE_ERROR_MESSAGE);
         } catch (DateTimeParseException e) {
-            return new NullCommand(MessageFormatter.dateTimeFormatErrorMessage());
+            return new NullCommand(MessageFormatter.DATE_TIME_FORMAT_ERROR_MESSAGE);
         }
     }
 
@@ -63,9 +60,9 @@ public class Parser {
             LocalDateTime to = LocalDateTime.parse(parts[2], Task.DATE_FORMATTER);
             return new AddCommand(new Event(name, false, from, to));
         } catch (IndexOutOfBoundsException e) {
-            return new NullCommand(MessageFormatter.eventErrorMessage());
+            return new NullCommand(MessageFormatter.EVENT_ERROR_MESSAGE);
         } catch (DateTimeParseException e) {
-            return new NullCommand(MessageFormatter.dateTimeFormatErrorMessage());
+            return new NullCommand(MessageFormatter.DATE_TIME_FORMAT_ERROR_MESSAGE);
         }
     }
 
@@ -80,7 +77,7 @@ public class Parser {
             int markIdx = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new MarkCommand(markIdx);
         } catch (NumberFormatException e) {
-            return new NullCommand(MessageFormatter.numFormatErrorMessage());
+            return new NullCommand(MessageFormatter.NUM_FORMAT_ERROR_MESSAGE);
         }
     }
 
@@ -95,7 +92,7 @@ public class Parser {
             int unmarkIdx = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new UnmarkCommand(unmarkIdx);
         } catch (NumberFormatException e) {
-            return new NullCommand(MessageFormatter.numFormatErrorMessage());
+            return new NullCommand(MessageFormatter.NUM_FORMAT_ERROR_MESSAGE);
         }
     }
 
@@ -110,7 +107,7 @@ public class Parser {
             int idxToDelete = Integer.parseInt(rawCommand.split(" ")[1]) - 1;
             return new DeleteCommand(idxToDelete);
         } catch (NumberFormatException e) {
-            return new NullCommand(MessageFormatter.numFormatErrorMessage());
+            return new NullCommand(MessageFormatter.NUM_FORMAT_ERROR_MESSAGE);
         }
     }
 
@@ -143,7 +140,7 @@ public class Parser {
         } else if (action.equals("find")) {
             return parseFind(rawCommand);
         } else {
-            return new NullCommand(MessageFormatter.commandErrorMessage());
+            return new NullCommand(MessageFormatter.COMMAND_ERROR_MESSAGE);
         }
 
     }

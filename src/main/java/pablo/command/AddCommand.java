@@ -27,7 +27,7 @@ public class AddCommand extends Command {
     @Override
     public CommandResult execute(TaskList tasks, DataLoader storage) {
         if (tasks.containsTask(task)) {
-            return new CommandResult(MessageFormatter.taskDuplicateMessage());
+            return new CommandResult(MessageFormatter.DUPLICATE_TASK_MESSAGE);
         }
         try {
             tasks.addTask(task);
@@ -36,7 +36,7 @@ public class AddCommand extends Command {
             return new CommandResult(String.format("Got it. I've added this task:\n    %s\n    " +
                     "Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IOException e) {
-            return new CommandResult(MessageFormatter.writeErrorMessage());
+            return new CommandResult(MessageFormatter.WRITE_ERROR_MESSAGE);
         }
     }
 

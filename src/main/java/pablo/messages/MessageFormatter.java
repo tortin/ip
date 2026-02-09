@@ -6,16 +6,22 @@ import pablo.task.TaskList;
  * Contains several messages for known errors.
  */
 public class MessageFormatter {
-    public MessageFormatter() {
+    public static final String WELCOME_MESSAGE = "Hello! I'm Pablo! What can I do for you?";
+    public static final String GOODBYE_MESSAGE = "Bye. Hope to see you again soon!";
+    public static final String LOADING_ERROR_MESSAGE = "Unable to load list! List is set to empty.";
+    public static final String WRITE_ERROR_MESSAGE = "Unable to write to pablo.txt!";
+    public static final String DATE_TIME_FORMAT_ERROR_MESSAGE = "Date and time information must be specified " +
+            "using dd-mm-yyyy_hh:mm";
+    public static final String DEADLINE_ERROR_MESSAGE = "You must specify a complete by timing for a deadline" +
+            " task using the \"by\" tag!";
+    public static final String EVENT_ERROR_MESSAGE = "You must specify a to and from timing for a pablo.task.Event " +
+            "task using the \"/from\" and \"/to\" tags!";
+    public static final String INDEX_ERROR_MESSAGE = "The specified task does not exist! Specify a number" +
+            " corresponding to a task!";
+    public static final String NUM_FORMAT_ERROR_MESSAGE = "You must specify an number corresponding to a task" +
+            " to mark/unmark/delete!";
+    public static final String COMMAND_ERROR_MESSAGE = "I don't understand that command!";
 
-    }
-
-    /**
-     * Returns the welcome message.
-     */
-    public static String welcomeMessage() {
-        return "Hello! I'm Pablo! What can I do for you?";
-    }
 
     /**
      * Returns the current task list.
@@ -32,69 +38,5 @@ public class MessageFormatter {
             }
         }
         return output.toString();
-    }
-
-    /**
-     * Returns the goodbye message.
-     */
-    public static String goodbyeMessage() {
-        return "Bye. Hope to see you again soon!";
-    }
-
-    /**
-     * Returns the error message when the list is unable to be loaded from disk.
-     */
-    public static String loadingErrorMessage() {
-        return "Unable to load list! List is set to empty.";
-    }
-
-    /**
-     * Returns the error message when the task list cannot be written to disk.
-     */
-    public static String writeErrorMessage() {
-        return "Unable to write to pablo.txt!";
-    }
-
-    /**
-     * Returns the error message when the user does not enter a date time in the correct format.
-     */
-    public static String dateTimeFormatErrorMessage() {
-        return "Date and time information must be specified using dd-mm-yyyy_hh:mm";
-    }
-
-    /**
-     * Returns the error message when a deadline command was issued, but cannot be parsed properly.
-     */
-    public static String deadlineErrorMessage() {
-        return "You must specify a complete by timing for a deadline task using the \"by\" tag!";
-    }
-
-    /**
-     * Returns the error message when a event command was issued, but cannot be parsed properly.
-     */
-    public static String eventErrorMessage() {
-        return "You must specify a to and from timing for a pablo.task.Event task" +
-                " using the \"/from\" and \"/to\" tags!";
-    }
-
-    /**
-     * Returns the error message when the user tries to access an index larger than the size of the task list.
-     */
-    public static String indexErrorMessage() {
-        return "The specified task does not exist! Specify a number corresponding to a task!";
-    }
-
-    /**
-     * Returns the error message when an integer is not specified.
-     */
-    public static String numFormatErrorMessage() {
-        return "You must specify an number corresponding to a task to mark/unmark/delete!";
-    }
-
-    /**
-     * Returns the error message when the command issued is not recognised.
-     */
-    public static String commandErrorMessage() {
-        return "I don't understand that command!";
     }
 }

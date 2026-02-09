@@ -31,7 +31,7 @@ public class AddCommand extends Command {
             return new CommandResult(String.format("Got it. I've added this task:\n    %s\n    " +
                     "Now you have %d tasks in the list.", task.describe(), tasks.size()));
         } catch (IOException e) {
-            return new CommandResult(MessageFormatter.writeErrorMessage());
+            return new CommandResult(MessageFormatter.WRITE_ERROR_MESSAGE);
         }
     }
 

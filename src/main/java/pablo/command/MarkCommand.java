@@ -26,6 +26,7 @@ public class MarkCommand extends Command {
     public CommandResult execute(TaskList tasks, DataLoader storage) {
         try {
             tasks.markTask(markIdx);
+            assert tasks.getTask(markIdx).getDone() : "Task was not marked successfully!";
             storage.writeFile(tasks);
             return new CommandResult(String.format("Nice! I've marked this task as done:\n    %s",
                     tasks.getTask(markIdx).describe()));

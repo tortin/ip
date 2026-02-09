@@ -83,4 +83,13 @@ public class TaskList {
         }
         return filtered;
     }
+
+    public boolean containsTask(Task checkTask) {
+        for (Task task : taskList) {
+            if (checkTask.equals(task)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }

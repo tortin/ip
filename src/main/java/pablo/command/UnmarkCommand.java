@@ -1,9 +1,9 @@
 package pablo.command;
 
 import java.io.IOException;
-
 import pablo.fileio.DataLoader;
 import pablo.messages.MessageFormatter;
+import pablo.task.Task;
 import pablo.task.TaskList;
 
 /**
@@ -26,10 +26,12 @@ public class UnmarkCommand extends Command {
     public CommandResult execute(TaskList tasks, DataLoader storage) {
         try {
             tasks.unmarkTask(unmarkIdx);
-            assert !tasks.getTask(unmarkIdx).getDone() : "Task was not unmarked successfully!";
+            Task task = tasks.getTask(unmarkIdx);
+            assert !task.getDone() : "Task was not unmarked successfully!";
             storage.writeFile(tasks);
-            return new CommandResult(String.format("Nice! I've marked this task as undone:\n    %s",
-                    tasks.getTask(unmarkIdx).describe()));
+            return new CommandResult(String.format(
+                    "Nice! I've marked this task as undone:\n    %s",
+                    task.describe()));
         } catch (IndexOutOfBoundsException e) {
             return new CommandResult(MessageFormatter.INDEX_ERROR_MESSAGE);
         } catch (IOException e) {
